@@ -30,7 +30,9 @@
 				animate(
 					button,
 					{
-						backgroundColor: [baseColor, pressColor, baseColor]
+						backgroundColor: [baseColor, pressColor, baseColor],
+						scale: [1, 0.96, 1],
+						// filter: ['blur(0px)', `blur(1px)`, 'blur(0px)']
 					},
 					{
 						duration: 0.3,
