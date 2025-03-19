@@ -12,7 +12,7 @@
 </svg>
 
 <div class="h-full w-full bg-gray-950">
-	<div class="content absolute inset-0 z-0 opacity-15 bg-gray-950"></div>
+	<div class="content absolute inset-0 z-0 bg-gray-950 opacity-15"></div>
 
 	<div class="relative z-10">
 		{@render children()}
