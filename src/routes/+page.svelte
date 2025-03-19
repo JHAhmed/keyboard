@@ -145,7 +145,7 @@ let inFocus = $state(false)
 
 		<div class="hidden lg:block">
             {#each rows as row}
-                <div class="flex">
+                <div class="flex items-center justify-center">
                     {#each row as key}
                         <Button
                             text={key.key}
