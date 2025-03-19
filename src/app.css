@@ -1,0 +1,8 @@
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@200,201,300,301,400,401,500,501,600,601&f[]=zodiak@100,101,300,301,400,401,700,701&display=block');
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+    --font-sans: "General Sans", "sans-serif";
+    --font-serif: "Zodiak", "serif";
+}
