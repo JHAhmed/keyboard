@@ -21,7 +21,9 @@
 
 	let button;
 	let className = cn(
-		`inline-block cursor-pointer px-4 py-2 align-middle font-extralight font-sans text-xs m-0.5 rounded-lg font-semibold text-gray-600 outline-none h-12`
+		`inline-block cursor-pointer px-4 
+		lg:px-6 py-2 lg:py-3 align-middle font-extralight 
+		font-sans text-xs m-0.5 rounded-lg font-semibold text-gray-600 outline-none h-12`
 	);
 
 	if (browser) {
@@ -54,5 +56,3 @@
 	</span>
 </div>
 
-<style>
-</style>

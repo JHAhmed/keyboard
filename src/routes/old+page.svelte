@@ -94,12 +94,12 @@
 		],
 		[
 			{ unit: 1.75, key: 'Ctrl', code: 'ControlLeft', color: '#091828' },
-			{ unit: 1.5, key: 'Win', code: 'MetaLeft', color: '#091828' },
+			{ unit: 1.50, key: 'Win', code: 'MetaLeft', color: '#091828' },
 			{ unit: 1.25, key: 'Alt', code: 'AltLeft', color: '#091828' },
 			{ unit: 4.5, key: 'Space', code: 'Space', color: '#091828' },
 			{ unit: 1.75, key: 'Alt', code: 'AltRight', color: '#091828' },
-			{ unit: 1.5, key: 'Win', code: 'MetaRight', color: '#091828' },
-			{ unit: 1.5, key: 'Menu', code: 'ContextMenu', color: '#091828' },
+			{ unit: 1.50, key: 'Win', code: 'MetaRight', color: '#091828' },
+			{ unit: 1.50, key: 'Menu', code: 'ContextMenu', color: '#091828' },
 			{ unit: 1.25, key: 'Ctrl', code: 'ControlRight', color: '#091828' }
 		]
 	];
@@ -109,21 +109,21 @@
 	let textArea;
 </script>
 
-<section class=" space-y-8">
-	<div class="mx-auto flex w-full flex-col items-center justify-center p-2 text-white">
-		<p class="text-lg">QCLKP</p>
-		<p class="text-xs text-gray-500 text-center">Quick Cool Little Keyboard Project</p>
-	</div>
-
-	<div
-		class="mx-auto {inFocus ? 'opacity-0' : 'opacity-100'} flex w-full items-center justify-center"
-	>
+{#if !inFocus}
+	<div class="absolute bottom-16 mx-auto flex w-full items-center justify-center">
 		<div class="rounded-lg border-2 border-blue-950 bg-blue-900/20 p-2 text-white">
-			<p class="text-xs text-center lg:text-sm">Press any button to start typing!</p>
+			<p class="text-xs lg:text-sm">Press any button to start typing!</p>
 		</div>
 	</div>
+{/if}
 
-	<div class="flex flex-col items-center justify-center md:p-16">
+<div class="absolute top-8 mx-auto flex w-full flex-col items-center justify-center p-2 text-white">
+	<p class="text-lg">QCLKP</p>
+	<p class="text-xs text-gray-500">Quick Cool Little Keyboard Project</p>
+</div>
+
+<section>
+	<div class="flex h-screen flex-col items-center justify-center">
 		<div class="my-8 flex items-center justify-center">
 			<textarea
 				onfocusout={(inFocus = false)}
@@ -136,11 +136,7 @@
 			></textarea>
 		</div>
 
-        <div class="block text-center md:hidden text-lg text-white">
-            <p>Best viewed on larger screens!</p>
-        </div>
-
-		<div class="hidden md:block">
+		<div class="hidden lg:block">
 			{#each rows as row}
 				<div class="flex items-center justify-center">
 					{#each row as key, i}
@@ -155,26 +151,26 @@
 			{/each}
 		</div>
 	</div>
-
-	<footer class="mx-auto flex w-full items-center justify-center py-4">
-		<div
-			class="flex flex-col items-center justify-center space-x-8 text-center font-medium text-gray-900 lg:flex-row text-sm"
-		>
-			<p class="font-normal text-gray-600">
-				Made with ♥️ by
-				<a href="https://jamal-haneef.vercel.app/" class=""
-					><span
-						class="mx-0.5 font-medium text-gray-300 decoration-gray-300 decoration-1 underline-offset-2 hover:underline"
-						>Jamal Haneef</span
-					></a
-				>
-				<a href="https://wurks.studio/" class=""
-					>& <span
-						class="ml-0.5 font-medium text-purple-600 decoration-purple-600 decoration-1 underline-offset-2 hover:underline"
-						>Wurks</span
-					>.</a
-				>
-			</p>
-		</div>
-	</footer>
 </section>
+
+<footer class="absolute bottom-4 mx-auto flex w-full items-center justify-center">
+	<div
+		class="flex flex-col items-center justify-center space-x-8 text-center text-xs font-medium text-gray-900 lg:flex-row lg:text-sm"
+	>
+		<p class="font-normal text-gray-600">
+			Made with ♥️ by
+			<a href="https://jamal-haneef.vercel.app/" class=""
+				><span
+					class="mx-0.5 font-medium text-gray-300 decoration-gray-300 decoration-1 underline-offset-2 hover:underline"
+					>Jamal Haneef</span
+				></a
+			>
+			<a href="https://wurks.studio/" class=""
+				>& <span
+					class="ml-0.5 font-medium text-purple-600 decoration-purple-600 decoration-1 underline-offset-2 hover:underline"
+					>Wurks</span
+				>.</a
+			>
+		</p>
+	</div>
+</footer>
